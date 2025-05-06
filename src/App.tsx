@@ -1,26 +1,13 @@
-import { useEffect, useState } from "react";
 import { useAuthenticator } from '@aws-amplify/ui-react';
-import type { Schema } from "../amplify/data/resource";
-import { generateClient } from "aws-amplify/data";
-
-const client = generateClient<Schema>();
 
 function App() {
   const { signOut } = useAuthenticator();
-  const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
-
-  useEffect(() => {
-    client.models.Todo.observeQuery().subscribe({
-      next: (data) => setTodos([...data.items]),
-    });
-  }, []);
-
-
 
   return (
     <main>
-      <h1>My todos</h1>
-
+      <h1>Sign In</h1>
+      
+      {/* Sign-out button */}
       <button onClick={signOut}>Sign out</button>
     </main>
   );
