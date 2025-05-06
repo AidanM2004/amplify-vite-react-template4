@@ -1,3 +1,9 @@
 {
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@aws-amplify/amplify-function-plugin-interface": "^1.12.1",
+    "@aws-amplify/backend": "^1.16.1",
+    "aws-sdk": "^2.1692.0",
+    "react-router-dom": "^7.5.3"
+  }
 }
